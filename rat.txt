@@ -1,8 +1,5 @@
 --[[
 
-
-
-
 ░██████╗░█████╗░██╗░░░░░░█████╗░██████╗░
 ██╔════╝██╔══██╗██║░░░░░██╔══██╗██╔══██╗
 ╚█████╗░███████║██║░░░░░███████║██║░░██║
@@ -61,7 +58,7 @@ local protectedr = {
 	StatusMessage = "OK",
 	Body = [[
 	{
-	"[ Neura/Czk ]: Protected | discord.gg/getczk"
+	"[ Vulnera ]:
 	}
 	]],
 	Headers = {}
@@ -472,7 +469,7 @@ function XenoBridge:request(options)
 	end
 	return {
 		Success = false,
-		StatusMessage = "[ Neura Error ]: WebServer connection failed:  " .. self.Host,
+		StatusMessage = "[ Vulnera Error ]: WebServer connection failed:  " .. self.Host,
 		StatusCode = 599;
 		HttpError = Enum.HttpError.ConnectFail
 	}
@@ -500,9 +497,9 @@ getgenv().request = function(options)
 		return protectedr  
 	end
 	if options.Headers then
-		options.Headers["User-Agent"] = "IluvSza/RobloxApp/2.1"
+		options.Headers["User-Agent"] = "iluvszaandsalad/RobloxApp/1.0"
 	else
-		options.Headers = {["User-Agent"] = "IluvSza/RobloxApp/2.1"}
+		options.Headers = {["User-Agent"] = "iluvszaandsalad/RobloxApp/1.0"}
 	end
 	local response = oldr(options)
 	if shared.httpspy then
@@ -560,7 +557,7 @@ getgenv().require = function(scr) -- not mine
 					warn("[ Vulnera ]: Require failed: cant require a modulescript with no code")
 				end
 			else 
-				warn("[ Neura ]: Require failed: require asset id failed")
+				warn("[ Vulnera ]: Require failed: require asset id failed")
 			end
 		end
 		return
@@ -1238,15 +1235,15 @@ if not shared.vulnsm then
 	end
 	getgenv().rconsoleclear = function()
 		XenoBridge:rconsole("cls") 
-		rconsolesettitle("Vulnera is NOT fat!")
+		rconsolesettitle("vulnera is NOT fat!")
 	end
 	getgenv().rconsolecreate = function()
 		XenoBridge:rconsole("crt")
-		rconsolesettitle("Vulnera is NOT fat!")
+		rconsolesettitle("vulnera is NOT fat!")
 	end
 	getgenv().rconsoledestroy = function()
 		XenoBridge:rconsole("dst")
-		rconsolesettitle("Vulnera is NOT fat!")
+		rconsolesettitle("vulnera is NOT fat!")
 	end
 	getgenv().rconsoleprint = function(...)
 		local text = ""
@@ -1285,7 +1282,7 @@ if not shared.vulnsm then
 		getfenv().game = nil
 		flags = flags or 0
 		writefile("messageboxargs.txt", string.format("%s\n%s\n%d", text, caption, flags)) 
-		warn("[ Vulnera ] - Loading the messagebox, please wait a bit")
+		warn("[ Neura ] - Loading the messagebox, please wait a bit")
 		local fw = false 
 		while not fw do
 			if isfile("messageboxargs.txt") then
@@ -1300,7 +1297,7 @@ if not shared.vulnsm then
 		local skibidi = [[ 
 			@echo off
 			setlocal enabledelayedexpansion
-			powershell -Command "Write-Host '[ Vulnera deadazz ]' -ForegroundColor Blue"
+			powershell -Command "Write-Host '[ Vulnera deadazz deadazz 2 ]' -ForegroundColor Blue"
 			set fp=%APPDATA%\Salad 2.1\workspace\messageboxargs.txt
 			:waitforf
 			if not exist "!fp!" (
@@ -1920,7 +1917,7 @@ getgenv().getprotectedguis = getgenv().getprotecteduis
 getgenv().debug.isvalidlevel = getgenv().debug.validlevel
 getgenv().is_our_closure = isexecutorclosure 
 getgenv().issynapsefunction = isexecutorclosure
-print("[ Neura ]: Added functions to the env.")
+print("[ Vulnera ]: Added functions to the env.")
 if not shared.vulnsm then 
 	local wrappercache = setmetatable({}, {__mode = "k"})
 	wrap = function(real)
@@ -1935,7 +1932,7 @@ if not shared.vulnsm then
 			meta.__index = function(s,k)
 				if table.find(VulnFuncs, k) then 
 					return function()
-						error("[ Vulnera ]: "..tostring(k).." isn't available.")
+						error("[ Neura ]: "..tostring(k).." isn't available.")
 					end
 				elseif k == "GetObjects" or k == "LoadLocalAsset" or k == "LoadAsset" then
 					return function(self, id)
@@ -2025,8 +2022,8 @@ if not shared.vulnsm then
 	end
 	getgenv().writefile = function(fname, data)
 		if checkblacklisted(fname) then
-			return error("[ Vulnera ]: Unable to create this file: " .. tostring(fname))
-		end
+			return error("[ Vulnera]: Unable to create this file: " .. tostring(fname))
+			end
 		oldwr(fname, data)  
 	end
 	print("[ Vulnera ]: Vulns mitigated.")
@@ -2035,7 +2032,7 @@ end
 repeat task.wait()
     local s, r = pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "[ Vulnera ] [ 1.6 ]",
+            Title = "[ getsalad iluv you ] [ idkvro ]",
             Duration = 5,        })
     end)
     if s then
